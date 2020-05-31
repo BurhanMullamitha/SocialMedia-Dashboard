@@ -1,1 +1,293 @@
 @import 'colors';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 3rem;
+}
+
+.header {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0;
+
+    &__left {
+        
+    }
+
+    &__title {
+
+    }
+
+    &__followers {
+        color: $color-text;
+        font-weight: 700;
+    }
+
+    &__right {
+
+    }
+
+}
+
+.social-overviews {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+}
+
+.social-overview {
+    
+    background-color: $color-card-bg;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-row-gap: 2.8rem;
+    border-radius: 5px;
+    overflow: hidden;
+    color: $color-text;
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 1rem;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &__user {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    &__followers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        letter-spacing: .7ch;
+    }
+
+    &__count {
+        font-weight: 700;
+        font-size: 6rem;
+        color: $color-text-2;
+        letter-spacing: 1px;
+    }
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $color-text;
+    }
+
+    &__status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__stat {
+        height: .5rem;
+        width: 1rem;
+        margin-right: .5rem;
+    }
+
+    &__day {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-lime-green;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba($color-card-hover, .4); 
+    }
+
+}
+
+
+.today-overviews {
+
+    margin-top: 4.4rem;
+    
+    &__title {
+        color: $color-text;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 3rem;
+        margin-top: 2.2rem;
+    }
+
+    &__item {
+        background-color: $color-card-bg;
+        padding: 2.5rem;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba($color-card-hover, .38); 
+        }
+    }
+
+    &__head,
+    &__main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__main {
+        margin-top: 2rem;
+    }
+
+    &__category {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-text;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &__count {
+        font-size: 3.3rem;
+        font-weight: bold;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__stat {
+        height: .5rem;
+        width: 1rem;
+        margin-right: .35rem;
+    }
+
+    &__percentage {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
+
+
+.facebook {
+    background-image: url('../images/icon-facebook.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.twitter {
+    background-image: url('../images/icon-twitter.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.instagram {
+    background-image: url('../images/icon-instagram.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.youtube {
+    background-image: url('../images/icon-youtube.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.up {
+    background-image: url('../images/icon-up.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.down {
+    background-image: url('../images/icon-down.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.border {
+
+    &-ig {
+        position: relative;
+    }
+
+    &-ig::after {
+        content: '';
+        top: 0;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background-image: linear-gradient(to right, $color-instagram-1, $color-instagram-2);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &-fb {
+        border-top: 5px solid $color-facebook;
+    }
+
+    &-tw {
+        border-top: 5px solid $color-twitter;
+    }
+
+    &-yt {
+        border-top: 5px solid $color-youtube;
+    }
+
+}
+
+.green {
+    color: $color-lime-green;
+}
+
+.red {
+    color: $color-bright-red;
+}
+
+.heading-1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.heading-2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+
+.u-margin-bottom {
+    margin-bottom: 2rem;
+}
+
+.u-margin-top {
+    margin-top: 2rem;
+}
