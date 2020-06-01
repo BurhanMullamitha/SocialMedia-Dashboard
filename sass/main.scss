@@ -1,4 +1,44 @@
-@import 'colors';
+// COLORS
+
+$color-lime-green: hsl(163, 72%, 41%);
+$color-bright-red: hsl(356, 69%, 56%);
+
+$color-toggle-blue: hsl(210, 78%, 56%);
+$color-toggle-green: hsl(146, 68%, 55%);
+
+$color-facebook: hsl(195, 100%, 50%);
+$color-twitter: hsl(203, 89%, 53%);
+$color-youtube: hsl(348, 97%, 39%);
+$color-instagram-1: hsl(37, 97%, 70%);
+$color-instagram-2: hsl(329, 70%, 58%);
+
+:root {
+    --color: hsl(230, 17%, 14%);
+    --color-bg: #fff;
+    --color-top-bg: hsl(225, 100%, 98%);
+    --color-bottom-bg: hsl(225, 100%, 98%);
+    --color-card-bg: hsl(227, 47%, 96%);
+    --color-card-hover: hsl(231, 30%, 91%);
+    --color-text: hsl(228, 12%, 44%);
+    --color-text-2: hsl(228, 12%, 44%);
+    --color-theme-slider: #fff;
+}
+
+html[data-theme=dark] {
+    --color: #fff;
+    --color-bg: hsl(230, 17%, 14%);
+    --color-top-bg: hsl(232, 19%, 15%);
+    --color-bottom-bg: hsl(232, 19%, 15%);
+    --color-card-bg: hsl(228, 28%, 20%);
+    --color-card-hover: hsl(240, 20%, 28%);
+    --color-text: hsl(227, 4%, 53%);
+    --color-text-2: #fff;
+    --color-theme-slider: hsl(228, 28%, 20%);
+}
+
+
+
+// MAIN CSS
 
 *,
 *::before,
@@ -12,7 +52,8 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; 
     font-family: 'Inter', sans-serif;
-    background-color: $color-top-bg;
+    background-color: var(--color-bg);
+    height: 100%;
 }
 
 .container {
@@ -27,23 +68,14 @@ html {
     justify-content: space-between;
     margin: 5rem 0;
 
-    &__left {
-        
-    }
-
     &__title {
-        color: $color;
+        color: var(--color);
     }
 
     &__followers {
-        color: $color-text;
+        color: var(--color-text);
         font-weight: 700;
     }
-
-    &__right {
-
-    }
-
 }
 
 .social-overviews {
@@ -54,7 +86,7 @@ html {
 
 .social-overview {
     
-    background-color: $color-card-bg;
+    background-color: var(--color-card-bg);
     padding: 2rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -62,7 +94,7 @@ html {
     grid-row-gap: 2.8rem;
     border-radius: 5px;
     overflow: hidden;
-    color: $color-text;
+    color: var(--color-text);
 
     &__info {
         display: flex;
@@ -91,7 +123,7 @@ html {
     &__count {
         font-weight: 700;
         font-size: 6rem;
-        color: $color;
+        color: var(--color);
         letter-spacing: 1px;
     }
 
@@ -99,7 +131,7 @@ html {
         font-size: 1.3rem;
         font-weight: 400;
         text-transform: uppercase;
-        color: $color-text;
+        color: var(--color-text);
     }
 
     &__status {
@@ -122,7 +154,7 @@ html {
 
     &:hover {
         cursor: pointer;
-        background-color: rgba($color-card-hover, .4); 
+        background-color: var(--color-card-hover);
     }
 
 }
@@ -133,7 +165,7 @@ html {
     margin-top: 4.4rem;
     
     &__title {
-        color: $color-text-2;
+        color: var(--color-text-2);
     }
 
     &__box {
@@ -144,13 +176,13 @@ html {
     }
 
     &__item {
-        background-color: $color-card-bg;
+        background-color: var(--color-card-bg);
         padding: 2rem;
         border-radius: 5px;
 
         &:hover {
             cursor: pointer;
-            background-color: rgba($color-card-hover, .38); 
+            background-color: var(--color-card-hover);
         }
     }
 
@@ -171,7 +203,7 @@ html {
     &__category {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $color-text;
+        color: var(--color-text);
     }
 
     &__icon {
@@ -182,7 +214,7 @@ html {
     &__count {
         font-size: 3.3rem;
         font-weight: bold;
-        color: $color;
+        color: var(--color);
     }
 
     &__info {
@@ -202,6 +234,64 @@ html {
     }
 }
 
+.theme {
+    display: flex;
+    align-items: center;
+
+    em {
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        color: var(--color);
+    }
+
+    &__switch {
+        display: inline-block;
+        height: 3.5rem;
+        width: 6rem;
+        position: relative;
+
+        input {
+            display: none;
+        
+            &:checked + .theme__slider{
+                background-image: linear-gradient(to right, $color-toggle-green, $color-toggle-blue);
+            }
+
+            &:checked + .theme__slider:before{
+                transform: translateX(2.5rem);
+            }
+        }
+    }
+
+    &__slider {
+        background-image: linear-gradient(to right, $color-toggle-green, $color-toggle-blue);
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+
+        &:before {
+            background-color: var(--color-theme-slider);
+            bottom: .5rem;
+            content: "";
+            height: 2.5rem;
+            left: .5rem;
+            position: absolute;
+            transition: .4s;
+            width: 2.5rem;
+        }
+    }
+    .round {
+        border-radius: 3.5rem;
+    }
+
+    .round:before {
+        border-radius: 50%;
+    }
+}
 
 .facebook {
     background-image: url('../images/icon-facebook.svg');

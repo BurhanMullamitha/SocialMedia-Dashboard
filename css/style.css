@@ -1,3 +1,25 @@
+:root {
+  --color: hsl(230, 17%, 14%);
+  --color-bg: #fff;
+  --color-top-bg: hsl(225, 100%, 98%);
+  --color-bottom-bg: hsl(225, 100%, 98%);
+  --color-card-bg: hsl(227, 47%, 96%);
+  --color-card-hover: hsl(231, 30%, 91%);
+  --color-text: hsl(228, 12%, 44%);
+  --color-text-2: hsl(228, 12%, 44%);
+  --color-theme-slider: #fff; }
+
+html[data-theme=dark] {
+  --color: #fff;
+  --color-bg: hsl(230, 17%, 14%);
+  --color-top-bg: hsl(232, 19%, 15%);
+  --color-bottom-bg: hsl(232, 19%, 15%);
+  --color-card-bg: hsl(228, 28%, 20%);
+  --color-card-hover: hsl(240, 20%, 28%);
+  --color-text: hsl(227, 4%, 53%);
+  --color-text-2: #fff;
+  --color-theme-slider: hsl(228, 28%, 20%); }
+
 *,
 *::before,
 *::after {
@@ -9,7 +31,8 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   font-family: 'Inter', sans-serif;
-  background-color: #f5f7ff; }
+  background-color: var(--color-bg);
+  height: 100%; }
 
 .container {
   max-width: 1440px;
@@ -22,9 +45,9 @@ html {
   justify-content: space-between;
   margin: 5rem 0; }
   .header__title {
-    color: #1e202a; }
+    color: var(--color); }
   .header__followers {
-    color: #63687e;
+    color: var(--color-text);
     font-weight: 700; }
 
 .social-overviews {
@@ -33,7 +56,7 @@ html {
   grid-gap: 3rem; }
 
 .social-overview {
-  background-color: #f0f2fa;
+  background-color: var(--color-card-bg);
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -41,7 +64,7 @@ html {
   grid-row-gap: 2.8rem;
   border-radius: 5px;
   overflow: hidden;
-  color: #63687e; }
+  color: var(--color-text); }
   .social-overview__info {
     display: flex;
     justify-content: center;
@@ -61,13 +84,13 @@ html {
   .social-overview__count {
     font-weight: 700;
     font-size: 6rem;
-    color: #1e202a;
+    color: var(--color);
     letter-spacing: 1px; }
   .social-overview__title {
     font-size: 1.3rem;
     font-weight: 400;
     text-transform: uppercase;
-    color: #63687e; }
+    color: var(--color-text); }
   .social-overview__status {
     display: flex;
     justify-content: center;
@@ -82,24 +105,24 @@ html {
     color: #1db489; }
   .social-overview:hover {
     cursor: pointer;
-    background-color: rgba(174, 179, 203, 0.4); }
+    background-color: var(--color-card-hover); }
 
 .today-overviews {
   margin-top: 4.4rem; }
   .today-overviews__title {
-    color: #63687e; }
+    color: var(--color-text-2); }
   .today-overviews__box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3rem;
     margin-top: 2.2rem; }
   .today-overviews__item {
-    background-color: #f0f2fa;
+    background-color: var(--color-card-bg);
     padding: 2rem;
     border-radius: 5px; }
     .today-overviews__item:hover {
       cursor: pointer;
-      background-color: rgba(174, 179, 203, 0.38); }
+      background-color: var(--color-card-hover); }
   .today-overviews__head, .today-overviews__main {
     display: flex;
     justify-content: space-between; }
@@ -110,14 +133,14 @@ html {
   .today-overviews__category {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #63687e; }
+    color: var(--color-text); }
   .today-overviews__icon {
     height: 2.5rem;
     width: 2.5rem; }
   .today-overviews__count {
     font-size: 3.3rem;
     font-weight: bold;
-    color: #1e202a; }
+    color: var(--color); }
   .today-overviews__info {
     display: flex;
     align-items: flex-end; }
@@ -128,6 +151,47 @@ html {
   .today-overviews__percentage {
     font-size: 1.25rem;
     font-weight: 700; }
+
+.theme {
+  display: flex;
+  align-items: center; }
+  .theme em {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: var(--color); }
+  .theme__switch {
+    display: inline-block;
+    height: 3.5rem;
+    width: 6rem;
+    position: relative; }
+    .theme__switch input {
+      display: none; }
+      .theme__switch input:checked + .theme__slider {
+        background-image: linear-gradient(to right, #3eda82, #378fe6); }
+      .theme__switch input:checked + .theme__slider:before {
+        transform: translateX(2.5rem); }
+  .theme__slider {
+    background-image: linear-gradient(to right, #3eda82, #378fe6);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s; }
+    .theme__slider:before {
+      background-color: var(--color-theme-slider);
+      bottom: .5rem;
+      content: "";
+      height: 2.5rem;
+      left: .5rem;
+      position: absolute;
+      transition: .4s;
+      width: 2.5rem; }
+  .theme .round {
+    border-radius: 3.5rem; }
+  .theme .round:before {
+    border-radius: 50%; }
 
 .facebook {
   background-image: url("../images/icon-facebook.svg");
