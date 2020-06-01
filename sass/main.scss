@@ -12,6 +12,7 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; 
     font-family: 'Inter', sans-serif;
+    background-color: $color-top-bg;
 }
 
 .container {
@@ -31,7 +32,7 @@ html {
     }
 
     &__title {
-
+        color: $color;
     }
 
     &__followers {
@@ -71,8 +72,8 @@ html {
 
     &__icon {
         margin-right: 1rem;
-        height: 2rem;
-        width: 2rem;
+        height: 2.5rem;
+        width: 2.5rem;
     }
 
     &__user {
@@ -84,13 +85,13 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
-        letter-spacing: .7ch;
+        letter-spacing: 1ch;
     }
 
     &__count {
         font-weight: 700;
         font-size: 6rem;
-        color: $color-text-2;
+        color: $color;
         letter-spacing: 1px;
     }
 
@@ -132,7 +133,7 @@ html {
     margin-top: 4.4rem;
     
     &__title {
-        color: $color-text;
+        color: $color-text-2;
     }
 
     &__box {
@@ -144,7 +145,7 @@ html {
 
     &__item {
         background-color: $color-card-bg;
-        padding: 2.5rem;
+        padding: 2rem;
         border-radius: 5px;
 
         &:hover {
@@ -159,8 +160,12 @@ html {
         justify-content: space-between;
     }
 
+    &__head {
+        align-items: center;
+    }
+
     &__main {
-        margin-top: 2rem;
+        margin-top: 3.7rem;
     }
 
     &__category {
@@ -170,22 +175,23 @@ html {
     }
 
     &__icon {
-        height: 2rem;
-        width: 2rem;
+        height: 2.5rem;
+        width: 2.5rem;
     }
 
     &__count {
         font-size: 3.3rem;
         font-weight: bold;
+        color: $color;
     }
 
     &__info {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
     }
 
     &__stat {
-        height: .5rem;
+        height: 1rem;
         width: 1rem;
         margin-right: .35rem;
     }

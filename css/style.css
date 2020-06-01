@@ -8,7 +8,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: 'Inter', sans-serif; }
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7ff; }
 
 .container {
   max-width: 1440px;
@@ -20,6 +21,8 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 5rem 0; }
+  .header__title {
+    color: #1e202a; }
   .header__followers {
     color: #63687e;
     font-weight: 700; }
@@ -45,8 +48,8 @@ html {
     align-items: center; }
   .social-overview__icon {
     margin-right: 1rem;
-    height: 2rem;
-    width: 2rem; }
+    height: 2.5rem;
+    width: 2.5rem; }
   .social-overview__user {
     font-size: 1.3rem;
     font-weight: 700; }
@@ -54,7 +57,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    letter-spacing: .7ch; }
+    letter-spacing: 1ch; }
   .social-overview__count {
     font-weight: 700;
     font-size: 6rem;
@@ -92,7 +95,7 @@ html {
     margin-top: 2.2rem; }
   .today-overviews__item {
     background-color: #f0f2fa;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 5px; }
     .today-overviews__item:hover {
       cursor: pointer;
@@ -100,23 +103,26 @@ html {
   .today-overviews__head, .today-overviews__main {
     display: flex;
     justify-content: space-between; }
+  .today-overviews__head {
+    align-items: center; }
   .today-overviews__main {
-    margin-top: 2rem; }
+    margin-top: 3.7rem; }
   .today-overviews__category {
     font-size: 1.5rem;
     font-weight: 700;
     color: #63687e; }
   .today-overviews__icon {
-    height: 2rem;
-    width: 2rem; }
+    height: 2.5rem;
+    width: 2.5rem; }
   .today-overviews__count {
     font-size: 3.3rem;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #1e202a; }
   .today-overviews__info {
     display: flex;
-    align-items: center; }
+    align-items: flex-end; }
   .today-overviews__stat {
-    height: .5rem;
+    height: 1rem;
     width: 1rem;
     margin-right: .35rem; }
   .today-overviews__percentage {
