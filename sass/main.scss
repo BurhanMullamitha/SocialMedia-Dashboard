@@ -36,7 +36,9 @@ html[data-theme=dark] {
     --color-theme-slider: hsl(228, 28%, 20%);
 }
 
-
+// BREAKPOINTS
+$bp-medium: 56.25em;
+$bp-small: 31.25em;
 
 // MAIN CSS
 
@@ -76,12 +78,38 @@ html {
         color: var(--color-text);
         font-weight: 700;
     }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    &__right {
+        @media only screen and (max-width: $bp-small) {
+            margin: 3rem 0;
+            border-top: 1px solid var(--color-text-2);
+            padding: 2rem 0;
+        }
+    }
+
 }
 
 .social-overviews {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2.5rem;
+    }
 }
 
 .social-overview {
@@ -173,6 +201,18 @@ html {
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 3rem;
         margin-top: 2.2rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+        }
+    
+        @media only screen and (max-width: $bp-small) {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 2rem;
+        }
     }
 
     &__item {
@@ -238,10 +278,11 @@ html {
     display: flex;
     align-items: center;
 
-    em {
+    span {
         margin-right: 1rem;
-        font-size: 1.2rem;
-        color: var(--color);
+        font-size: 1.3rem;
+        color: var(--color-text);
+        font-weight: 700;
     }
 
     &__switch {
@@ -291,6 +332,11 @@ html {
     .round:before {
         border-radius: 50%;
     }
+
+    @media only screen and (max-width: $bp-small) {
+        justify-content: space-between;
+    }
+
 }
 
 .facebook {
@@ -339,7 +385,7 @@ html {
         content: '';
         top: 0;
         position: absolute;
-        height: 5px;
+        height: .5rem;
         width: 100%;
         background-image: linear-gradient(to right, $color-instagram-1, $color-instagram-2);
         background-size: cover;
