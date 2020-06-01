@@ -1,8 +1,7 @@
 :root {
   --color: hsl(230, 17%, 14%);
-  --color-bg: #fff;
   --color-top-bg: hsl(225, 100%, 98%);
-  --color-bottom-bg: hsl(225, 100%, 98%);
+  --color-bottom-bg: hsl(0, 0%, 100%);
   --color-card-bg: hsl(227, 47%, 96%);
   --color-card-hover: hsl(231, 30%, 91%);
   --color-text: hsl(228, 12%, 44%);
@@ -11,9 +10,8 @@
 
 html[data-theme=dark] {
   --color: #fff;
-  --color-bg: hsl(230, 17%, 14%);
   --color-top-bg: hsl(232, 19%, 15%);
-  --color-bottom-bg: hsl(232, 19%, 15%);
+  --color-bottom-bg: hsl(230, 17%, 14%);
   --color-card-bg: hsl(228, 28%, 20%);
   --color-card-hover: hsl(240, 20%, 28%);
   --color-text: hsl(227, 4%, 53%);
@@ -31,8 +29,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-bg);
-  height: 100%; }
+  background-image: linear-gradient(to top, var(--color-bottom-bg) 70%, var(--color-top-bg) 30%); }
 
 .container {
   max-width: 1440px;
