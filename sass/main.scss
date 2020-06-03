@@ -54,6 +54,16 @@ html {
     font-family: 'Inter', sans-serif;
     background-image: linear-gradient(to top, var(--color-bottom-bg) 70%, var(--color-top-bg) 30%);
 
+    @media only screen and (max-width: $bp-medium) {
+        background-image: none;
+        background-color: var(--color-bottom-bg);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        background-image: none;
+        background-color: var(--color-bottom-bg);
+    }
+
 }
 
 .container {
@@ -77,6 +87,10 @@ html {
         font-weight: 700;
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        margin: 5rem;
+    }
+
     @media only screen and (max-width: $bp-small) {
         flex-direction: column;
         margin: 1rem 0;
@@ -84,7 +98,7 @@ html {
 
     &__right {
         @media only screen and (max-width: $bp-small) {
-            margin: 3rem 0;
+            margin: 1rem 0 0 0;
             border-top: 1px solid var(--color-text-2);
             padding: 2rem 0;
         }
@@ -98,12 +112,14 @@ html {
     grid-gap: 3rem;
 
     @media only screen and (max-width: $bp-medium) {
+        margin: 5rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
     }
 
     @media only screen and (max-width: $bp-small) {
+        margin: 3rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 2.5rem;
@@ -189,9 +205,10 @@ html {
 .today-overviews {
 
     margin-top: 4.4rem;
-    
+  
     &__title {
         color: var(--color-text-2);
+        
     }
 
     &__box {
@@ -270,17 +287,32 @@ html {
         font-size: 1.25rem;
         font-weight: 700;
     }
+
+      
+    @media only screen and (max-width: $bp-medium) {
+        margin: 5rem 3rem;
+    }
 }
 
 .theme {
     display: flex;
     align-items: center;
 
+    
+
     span {
         margin-right: 1rem;
         font-size: 1.3rem;
         color: var(--color-text);
         font-weight: 700;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            display: block;
+        }
     }
 
     &__switch {
@@ -293,7 +325,7 @@ html {
             display: none;
         
             &:checked + .theme__slider{
-                background-image: linear-gradient(to right, $color-toggle-green, $color-toggle-blue);
+                background-image: linear-gradient(to right, $color-toggle-blue, $color-toggle-green);
             }
 
             &:checked + .theme__slider:before{
@@ -303,7 +335,7 @@ html {
     }
 
     &__slider {
-        background-image: linear-gradient(to right, $color-toggle-green, $color-toggle-blue);
+        background-image: linear-gradient(to right, $color-toggle-blue, $color-toggle-green);
         bottom: 0;
         cursor: pointer;
         left: 0;
